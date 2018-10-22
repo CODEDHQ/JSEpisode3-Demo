@@ -20,8 +20,6 @@ BLOCK 02 (PASSING FUNCTION AS ARGUMENT)
 
 ```javascript
 // Simple
-function someFunction()
-
 function runMe(fn) {
   fn();
 }

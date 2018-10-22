@@ -1,6 +1,6 @@
 # JSEpisodeThree-Demo
 
-[Slides]()
+[Slides](https://docs.google.com/presentation/d/1Jf6Dj5KhhUJZ-2sbSBAeLZb4ZeI5SxmfaBnvyNpqw2k/)
 
 ---
 
@@ -9,68 +9,104 @@
 BLOCK 01 (ASSIGNING TO VARIABLE)
 
 ```javascript
-let sayHello = function() {
-  console.log("Hello");
+let hello = function() {
+  console.log("Hello!");
 };
+
+hello();
 ```
 
 BLOCK 02 (PASSING FUNCTION AS ARGUMENT)
 
 ```javascript
+// Simple
+function someFunction()
+
 function runMe(fn) {
   fn();
 }
 
-let sayHello = function() {
-  console.log("Hello");
+runMe(hello);
+
+// Complete
+hello = function(name) {
+  console.log(`Hello ${name}`);
 };
 
-runMe(sayHello);
+const formal = function(name) {
+  console.log(`Greetings ${name}`);
+};
 
-// Anonymous function
-runMe(function() {
-  console.log("This is amazing!!");
-});
+const informal = function(name) {
+  console.log(`Yo ${name}`);
+};
+
+function greeting(greetFn, name) {
+  greetFn(name);
+}
+
+greeting(hello, "Asis");
+greeting(formal, "Mishmish");
+greeting(informal, "Hamsa");
+
+// Anonymous Function
+greeting(function(name) {
+  console.log(`こんにちは ${name}`);
+}, "Lailz");
 ```
 
 BLOCK 03 (RETURNING A FUNCTION)
 
 ```javascript
-function sayHello() {
-  return function() {
-    console.log("Hello!");
+function makeGreeter() {
+  return function(name) {
+    console.log(`Hello ${name}`);
   };
 }
 
-sayHello()(); // logs "Hello!" - notice the double parentheses
+makeGreeter()("Asis");
 ```
 
 BLOCK 04 (ARROW NOTATION)
 
 ```javascript
-const incrementWibble = wibble => {
-  return wibble + 1;
+const increment = n => {
+  return n + 1;
 };
 
-const incrementWibble = wibble => {
-  return wibble + 1;
-};
+console.log(incremenet(5));
 
-const incrementWibble = wibble => wibble + 1;
+// Implicit Return
+const increment = n => n + 1;
 ```
 
 BLOCK 05 (ARROW NOTATION MULTIPLE/NO PARAMETERS)
 
 ```javascript
-const multipleParameters = (parameterOne, parameterTwo) => {
-  return parameterOne + parameterTwo;
-};
+const multiply = (a, b) => a * b;
 
-multipleParameters(3, 4); // returns 7
+multiply(3, 4); // returns 7
 
-const noParameters = () => {
-  return "No Parameters Here.";
-};
+const noParameters = () => "No Parameters Here.";
+```
+
+BLOCK 06 (PUTTING IT ALL TOGETHER)
+
+```javascript
+function makeGreeter(greeting) {
+  return name => console.log(`${greeting} ${name}`);
+}
+
+const helloGreeter = makeGreeter("Hello");
+helloGreeter("Asis");
+helloGreeter("Hamsa");
+
+const arabicGreeter = makeGreeter("هلا");
+arabicGreeter("عزيز");
+arabicGreeter("حمزة");
+
+const japaneseGreeter = makeGreeter("こんにちは");
+japaneseGreeter("ライラ");
 ```
 
 ---

@@ -116,7 +116,7 @@ japaneseGreeter("ライラ");
 BLOCK 01 (.FOREACH)
 
 ```javascript
-let cities = ["Kuwait", "London", "New York", "Perth", "West Lafayette"];
+const cities = ["Kuwait", "London", "New York", "Perth", "West Lafayette"];
 
 console.log("I've lived in: ");
 for (let i = 0; i < cities.length; i++) {
@@ -130,7 +130,7 @@ cities.forEach(city => console.log(city));
 BLOCK 02 (.MAP)
 
 ```javascript
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let squares = [];
 
 for (let i = 0; i < numbers.length; i++) {
@@ -144,7 +144,7 @@ squares = numbers.map(number => number * number);
 BLOCK 03 (.FILTER)
 
 ```javascript
-let emails = [
+const emails = [
   "asis@joincoded.com",
   "fawas@joincoded.com",
   "mishmish@gmail.com",

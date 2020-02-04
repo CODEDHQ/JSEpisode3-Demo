@@ -11,7 +11,7 @@ All demos should be done in `script.js` file of an [`HTML` repl](https://repl.it
 BLOCK 01 (ASSIGNING TO VARIABLE)
 
 ```javascript
-let hello = function() {
+const hello = function() {
   console.log("Hello!");
 };
 
@@ -55,7 +55,7 @@ greeting(function(name) {
 }, "Lailz");
 ```
 
-BLOCK 03 (RETURNING A FUNCTION)
+BLOCK 03 (RETURNING A FUNCTION) - IGNOOORE
 
 ```javascript
 function makeGreeter() {
